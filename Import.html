@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBC2</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navigation Bar Section -->
+    <div class="full-page">
+        <nav class="navbar">
+            <div class="navbar__container">
+                <img src="nbclogo.png" height=60px width=60px>
+                <a href="#home" id="navbar__logo" style="position:absolute; left:100px; top:10px">NBC2 iPromote</a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="help.html" class="navbar__links" id="help-page">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="containerProfile">
+            <div id="container1">
+                <div id="containerLogo">
+                    <img src="tup_logo.png" alt="" width="150px" style="padding: 20px 0">
+                </div>
+                <ul class="links">
+                    <li class="link-item">
+                        <a href="profile.html" id="profile">Home</a>
+                    </li>
+                    <li class="link-item" style="background-color: #6d1919">
+                        <a href="Import.html" id="importPdf" style="color:#f0e6da">Import PDF</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="ECV.html" id="employeeCreditView">Employee Credit View</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="index.html" id="logoutBtn">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="container2i"> 
+                <div id="import-header">
+                    <h1>Import Section</h1>
+                </div>
+                <table id= "table1" class="table table-bordered mt-3">
+                    <thead>
+                      <tr>
+                        <th scope="col"  style="text-align: center;">Code</th>
+                        <th scope="col" style="text-align: center;">Points</th>
+                        <th scope="col" style="text-align: center;">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th style="text-align: center;">488</th>
+                        <td style="text-align: center;">3.0</td>
+                        <td style="text-align: center;">Pending</td>
+                      </tr>
+                      <tr>
+                        <th style="text-align: center;">492</th>
+                        <td style="text-align: center;">3.0</td>
+                        <td style="text-align: center;">Pending</td>
+                      </tr>
+                      <tr>
+                        <th style="text-align: center;">493</th>
+                        <td style="text-align: center;">0.0</td>
+                        <td style="text-align: center;">Pending</td>
+                      </tr>
+                    </tbody>
+                </table>
+                <input type="file" id="real-file" hidden="hidden" />
+                <button type="button" class="btn1" id="custom-button">Upload</button>
+                <button type="button" class="btn1 ">Preview PDF</button>
+                <div id="custom-text">No file chosen, yet.</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const realFileBtn = document.getElementById("real-file");
+        const customBtn = document.getElementById("custom-button");
+        const customTxt = document.getElementById("custom-text");
+
+        customBtn.addEventListener("click", function() {
+        realFileBtn.click();
+        });
+
+        realFileBtn.addEventListener("change", function() {
+        if (realFileBtn.value) {
+            customTxt.innerHTML = realFileBtn.value.match(
+            /[\/\\]([\w\d\s\.\-\(\)]+)$/
+            )[1];
+        } else {
+            customTxt.innerHTML = "No file chosen, yet.";
+        }
+        });
+    </script>
+</body>
+</html>

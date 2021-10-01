@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBC2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar Section -->
+    <div class="full-page">
+        <nav class="navbar">
+            <div class="navbar__container">
+                <img src="nbclogo.png" height=60px width=60px>
+                <a href="#home" id="navbar__logo" style="position:absolute; left:100px; top:10px">NBC2 iPromote</a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="index.html" class="navbar__links" id="home-page">Home</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="about.html" class="navbar__links" id="about-page">About</a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href='register.html' for='show' class="button" id="register-page">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="header-container">
+            <div class="header-left">
+                <h1 class="welcome-heading">Welcome to <br> NBC2 iPromote</h1>
+                <hr>
+                <h3 class='welcome-subheading'>NBC Portal for Technological University of the <br> Philippines-Manila College of Engineering <br> Faculty</h3>
+            </div>
+        </div>
+    </div>
+    <div class='form-box'>
+        <div class="container">
+            <div class="text">Admin Login</div>
+            <hr>
+            <form action="#">
+                <div class="data">
+                    <label>Username</label>
+                    <input type="text" required>
+                </div>
+                <div class="data">
+                    <label>Password</label>
+                    <input type="password" required>
+                </div>
+                <div class="btn">
+                    <div class="inner"></div>
+                    <button id='login-fbutton' type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+            x.addEventListener('submit', (e)=>{
+            e.preventDefault()
+            window.location.assign('profile.html')
+        })
+
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

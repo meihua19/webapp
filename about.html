@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBC2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar Section -->
+    <div class="full-page">
+        <nav class="navbar">
+            <div class="navbar__container">
+                <img src="nbclogo.png" height=60px width=60px>
+                <a href="#home" id="navbar__logo" style="position:absolute; left:100px; top:10px">NBC2 iPromote</a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="index.html" class="navbar__links" id="home-page">Home</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="about.html" class="navbar__links" id="about-page">About</a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="register.html" class="button" id="login">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="about-container">
+        <div class="about-title">
+            <div class="about-heading">
+                <h1>About</h1>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content"><p>
+                NBC2 is a system that can scan, store, sort, and save both hardcopy and softcopy documents as well as to allocate points in accordance with the NBC 461 guidelines 
+                using optical character recognition (OCR) and machine learning. NEM Blockchain’s Apostille service is integrated in the system to notarize the result and record it to Blockchain to ensure its authenticity and security. 
+            </p></div>
+        </div>
+        <div class="about-team">
+            <h2>Team 4sight</h2>
+            <img src="4sightlogo.png" width="40px" height="40px">
+        </div>
+        <div class="about-team-profile">
+            <div class="member">
+                <img class="circular-img" src="http://placekitten.com/500/500"/>
+                <p>Batan, Caroline D.</p>
+            </div>
+            <div class="member">
+                <img class="circular-img" src="http://placekitten.com/500/500"/>
+                <p>Ignacio, Adrian Rafael</p>
+            </div>
+            <div class="member">
+                <img class="circular-img" src="http://placekitten.com/500/500"/>
+                <p>Mamayog, Janissah J.</p>
+            </div>
+            <div class="member">
+                <img class="circular-img" src="http://placekitten.com/500/500"/>
+                <p>Paulino, Chyna A.</p>
+            </div>
+            <div class="member">
+                <img class="circular-img" src="http://placekitten.com/500/500"/>
+                <p>Tia, Kristine Anne M.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var x=document.getElementById('loginForm');
+        var y=document.getElementById('register');
+        var z=document.getElementById('btn');
+        function register()
+        {
+            x.style.left='-400px';
+            y.style.left='50px';
+            z.style.left='110px';
+        }
+        function login()
+        {
+            x.style.left='50px';
+            y.style.left='450px';
+            z.style.left='0px';
+        }
+    </script>
+    <script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+            {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

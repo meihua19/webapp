@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBC2</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body onload="initClock()">
+    <!-- Navigation Bar Section -->
+    <div class="full-page">
+        <nav class="navbar">
+            <div class="navbar__container">
+                <img src="nbclogo.png" height=60px width=60px>
+                <a href="#home" id="navbar__logo" style="position:absolute; left:100px; top:10px">NBC2 iPromote</a>
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="help.html" class="navbar__links" id="help-page">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="containerProfile">
+            <div id="container1">
+                <div id="containerLogo">
+                    <img src="tup_logo.png" alt="" width="150px" style="padding: 20px 0">
+                </div>
+                <ul class="links">
+                    <li class="link-item" style="background-color: #6d1919">
+                        <a href="profile.html" id="profile" style="color:#f0e6da">Home</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="Import.html" id="importPdf">Import PDF</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="ECV.html" id="employeeCreditView">Employee Credit View</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="index.html" id="logoutBtn">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="container2">
+                <div id="container2Inside">
+                    <i class="fas fa-user-alt"></i>
+                    <div id="container2InsideHeading">
+                        <div>
+                            <h2>Welcome, Cherry.</h2>
+                        </div>
+                        <div class="datetime">
+                            <div class="date">
+                              <span id="today">Today is </span>
+                              <span id="dayname">Day</span>,
+                              <span id="month">Month</span>
+                              <span id="daynum">00</span>,
+                              <span id="year">Year</span>
+                            </div>
+                            <div class="time">
+                              <span id="hour">00</span>:
+                              <span id="minutes">00</span>:
+                              <span id="seconds">00</span>
+                              <span id="period">AM</span>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function updateClock(){
+          var now = new Date();
+          var dname = now.getDay(),
+              mo = now.getMonth(),
+              dnum = now.getDate(),
+              yr = now.getFullYear(),
+              hou = now.getHours(),
+              min = now.getMinutes(),
+              sec = now.getSeconds(),
+              pe = "AM";
+    
+              if(hou >= 12){
+                pe = "PM";
+              }
+              if(hou == 0){
+                hou = 12;
+              }
+              if(hou > 12){
+                hou = hou - 12;
+              }
+    
+              Number.prototype.pad = function(digits){
+                for(var n = this.toString(); n.length < digits; n = 0 + n);
+                return n;
+              }
+    
+              var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
+              var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+              var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+              var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+              for(var i = 0; i < ids.length; i++)
+              document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+        }
+    
+        function initClock(){
+          updateClock();
+          window.setInterval("updateClock()", 1);
+        }
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
